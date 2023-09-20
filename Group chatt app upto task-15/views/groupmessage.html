@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Messages</title>
+</head>
+<body>
+
+    <ul id="allMessagesofgroup">
+        <h2>All messages of group</h2> 
+        
+    </ul><br><br> 
+
+
+
+
+
+
+    <input type="text" id="inputmessage" name="message" placeholder="message to send" required>
+    <button type="button" id="sendmessage">Send</button><br><br>
+
+
+    <h1>Upload a File</h1>
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" id="uploadfile">
+    <button type="submit">Upload</button>
+  </form>
+
+
+
+</body>
+
+<script src="groupmessage.js"></script>
+
+</html>
