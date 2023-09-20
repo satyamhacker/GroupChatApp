@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Client</title>
+</head>
+<body>
+    hiii
+    <script>
+        const socket = new WebSocket('ws://localhost:3000'); // WebSocket connection to the server
+      
+        socket.addEventListener('open', (event) => {
+          console.log('Connected to the server via WebSocket');
+          socket.send('Hello, server!');
+        });
+      
+        socket.addEventListener('message', (event) => {
+          console.log(`Received from server: ${event.data}`);
+        });
+      
+        socket.addEventListener('close', (event) => {
+          if (event.wasClean) {
+            console.log(`Connection closed cleanly, code=${event.code}, reason=${event.reason}`);
+          } else {
+            console.error('Connection abruptly closed');
+          }
+        });
+      
+        socket.addEventListener('error', (error) => {
+          console.error(`WebSocket Error: ${error.message}`);
+        });
+      </script>
+</body>
+</html>
